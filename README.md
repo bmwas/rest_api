@@ -60,13 +60,17 @@ pip install flask
 
 pip install connexion --ignore-installed PyYAML
 
-12) Install a web server gateway interface (uWSGI) - This example only works with uWSGI ( other options include gunicorn etc). 
+12) Note: May need to install connextion with swagger ui ( if need be - see 12 below).
+
+pip install connexion[swagger-ui]
+
+13) Install a web server gateway interface (uWSGI) - This example only works with uWSGI ( other options include gunicorn etc). 
 
 conda config --add channels conda-forge
 
 conda install uwsgi
 
-13)Make sure you inset the following lines of code at the bottom of the main python/flask code (assumes function is called 'app')
+14)Make sure you inset the following lines of code at the bottom of the main python/flask code (assumes function is called 'app')
 
 app = connexion.App(__name__)
 
@@ -78,8 +82,6 @@ if __name__ == '__main__':
 
     app.run(port=8080)
 
-14) Execute app
+15) Execute app
 
 uwsgi --http :8080 -w app
-
-
