@@ -34,9 +34,13 @@ conda install uwsgi
 8)Make sure you inset the following lines of code at the bottom of the main python/flask code (assumes function is called 'app')
 
 app = connexion.App(__name__)
+
 app.add_api('app.yaml')
+
 application = app.app
+
 if __name__ == '__main__':
+
     app.run(port=8080)
 
 9) Execute app
