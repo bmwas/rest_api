@@ -22,17 +22,12 @@ virtualenv myapi
 sudo gedit /etc/nginx/nginx.conf
 
 5) Add the following lines within the http or below the server block.Replace 'user1' with your username. server_name can be a domain or ip (i.e. server_domain_or_IP)
-
-server {
-    listen 80;
-    server_name 0.0.0.0;
+ server{
+    listen	 80;
+    server_name  domain_or_IP_Address;
 
     location / {
-        proxy_set_header Host $http_host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_pass http://unix:/home/user1/myapi/myapi.sock;
+        proxy_pass http://127.0.0.1:8080;
     }
 }
 
