@@ -3,6 +3,10 @@ A few steps to create a REST API with Python/FLASK, NGINX, UWSGI and the Swagger
 
 1) Install python dev, gcc and nginx
 
+sudo yum groupinstall "Development Tools"
+
+or
+
 dnf install python-pip python-devel gcc nginx
 
 2) Install python's virtual env
